@@ -1,0 +1,64 @@
+
+\documentclass[12pt,t]{beamer}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{color}
+\usetheme{CambridgeUS}
+
+%%%% addon
+\usepackage{tikz}
+\newcommand{\tikzcircle}[2][red,fill=red]{\tikz[baseline=-0.5ex]\draw[#1,radius=#2] (0,0) circle ;}%
+\usepackage[absolute,overlay]{textpos}\setlength{\TPHorizModule}{1mm}\setlength{\TPVertModule}{1mm}
+\newcommand{\importantslide}
+{
+\begin{textblock}{90}(117,3)
+\tikzcircle[black, fill=blue]{12pt}
+\end{textblock}
+}
+
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{}{}
+\addtobeamertemplate{headline}{}{\textcolor{white}{\rule{\paperwidth}{5pt}}
+}
+\setbeamertemplate{footline}[frame number]{}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+
+\begin{document}
+
+
+\section{Introduction}
+\begin{frame}
+\frametitle{\thesection.~\insertsection}
+\importantslide
+\begin{itemize}
+\item Text
+\item Text
+\item Text
+\begin{itemize}
+\item Subitem
+\item Subitem
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\section{Conclusion}
+\begin{frame}
+\frametitle{\thesection.~\insertsection}
+\begin{itemize}
+\item Text
+\item Text
+\item Text
+\begin{itemize}
+\item Subitem
+\item Subitem
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+
+\end{document}
