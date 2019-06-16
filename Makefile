@@ -1,6 +1,6 @@
 
 all:
-	  pdflatex   -shell-escape --interaction=nonstopmode template6.tex
-	  mupdf template6.pdf 
+	  pdflatex   -shell-escape --interaction=nonstopmode template7.tex
+	  mupdf template7.pdf 
 
 
