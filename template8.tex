@@ -1,0 +1,170 @@
+
+
+\documentclass[12pt,t]{beamer}
+
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{color}
+ 
+% %\usetheme{Madrid}
+\usetheme{CambridgeUS}
+% %gets rid of bottom navigation bars, then reset with {}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{}{}
+\addtobeamertemplate{headline}{}{\textcolor{white}{\rule{\paperwidth}{5pt}}
+}
+
+\setbeamertemplate{footline}[frame number]{}
+
+
+% some fix with lower than and I use not amsmath, nor math-mode
+\newcommand{\lt}{\ensuremath{<}\thinspace}%
+\newcommand{\gt}{\ensuremath{>}\thinspace}%
+
+
+
+\newcommand{\unititle}[1]{\title{#1}}
+\newcommand{\uniauthor}[1]{\author{#1}}
+\newcommand{\uniinstitute}[2]{\institute[#1]{#2}}
+\newcommand{\unisection}[1]{\frametitle{#1}}
+\newcommand{\unimaketitle}[1]{
+\begin{frame}
+\maketitle
+\end{frame}
+}
+
+\usepackage{calc}
+\newcommand{\unifig}[2]{
+\begin{center}
+\hspace{-1cm}\includegraphics[width=#2\textwidth*\real{0.91},keepaspectratio]{#1}
+%\includegraphics[scale=0.3,width=#2\textwidth,keepaspectratio]{#1}
+\end{center}
+}
+
+%%% to do 
+%\institute[Inst.]{The Institute}
+
+
+
+
+\usepackage{xparse,calc}
+\newlength\fitimageht
+\newlength\fitotherht
+\newsavebox\fitimagebox
+\NewDocumentCommand \fitimage { m m O {} }{%
+  \sbox\fitimagebox{%
+     \parbox{\textwidth}{%
+       #1\par
+       #3
+    }%
+  }%
+  \settototalheight{\fitotherht}{%
+     \usebox\fitimagebox
+  }%
+  \setlength\fitimageht{\textheight}%
+  \addtolength\fitimageht{-\fitotherht-\topskip-\footskip-3\baselineskip}%
+  #1\par
+   \centering
+   \includegraphics[width=\textwidth,height=\fitimageht,keepaspectratio]{#2}\par
+  #3}
+
+
+
+\usepackage{xparse,calc}
+%\newlength\fitimageht
+%\newlength\fitotherht
+%\newsavebox\fitimagebox
+\NewDocumentCommand \fitimageab { m m m O {} }{%
+  \sbox\fitimagebox{%
+     \parbox{\textwidth}{%
+       #1\par
+       #4
+    }%
+  }%
+  \settototalheight{\fitotherht}{%
+     \usebox\fitimagebox
+  }%
+  \setlength\fitimageht{\textheight}%
+  \addtolength\fitimageht{-\fitotherht-\topskip-\footskip-3\baselineskip}%
+  #1\par
+   \begin{columns}[onlytextwidth]
+   \column{.48\linewidth}
+   \centering
+   \includegraphics[width=\textwidth,height=\fitimageht,keepaspectratio]{#2}
+   \column{.48\linewidth}
+   \centering
+   \includegraphics[width=\textwidth,height=\fitimageht,keepaspectratio]{#3}
+   \end{columns}\par
+   #4}
+
+
+
+ 
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[absolute,overlay]{textpos}
+\newcommand{\pagemark}
+{
+\begin{textblock*}{0.45\textwidth}(0.95\textwidth,0.05\textheight)
+\includegraphics[width=0.20\textwidth]{20190625022346F1-star.jpg}
+\end{textblock*}
+}
+
+\usepackage[utf8]{inputenc}
+\begin{document}
+
+
+%section281
+\section{Section}
+\begin{frame}
+\frametitle{\thesection.~\insertsection}
+\begin{itemize}
+\item Header
+\begin{itemize}
+\item this is an example
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+%section281
+\section{Section}
+\begin{frame}
+\frametitle{\thesection.~\insertsection}
+\begin{itemize}
+\item Header
+\begin{itemize}
+\item this is an example
+
+\item test2
+\end{itemize}
+\end{itemize}
+\pagemark
+\end{frame}
+
+
+
+%section281
+\section{Section}
+\begin{frame}
+\frametitle{\thesection.~\insertsection}
+\begin{itemize}
+\item Header
+\begin{itemize}
+\item this is an example
+\item test2
+
+\end{itemize}
+\end{itemize}
+\pagemark
+\end{frame}
+
+
+
+\end{document}
+
+
+
